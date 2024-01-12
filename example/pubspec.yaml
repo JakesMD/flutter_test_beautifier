@@ -1,0 +1,16 @@
+name: example
+version: 0.1.0+1
+publish_to: "none"
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter_test:
+    sdk: flutter
+  test_beautifier:
+    path: ../
+
+dev_dependencies:
+  very_good_analysis: ^5.1.0

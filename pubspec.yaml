@@ -1,0 +1,15 @@
+name: test_beautifier
+description: A package designed to enhance the readability of your test cases.
+version: 0.1.0+1
+homepage: https://github.com/JakesMD/flutter_test_beautifier
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter_test:
+    sdk: flutter
+
+dev_dependencies:
+  very_good_analysis: ^5.1.0
