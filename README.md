@@ -63,3 +63,50 @@ testWidgets(
 ```
 
 This may seem trivial but can make a huge difference in long and complicated test files.
+
+
+## ⌨️ VSCode Snippets
+To improve your workflow you can add this to your snippets:
+``` json
+// .vscode/btest.code-snippets
+
+{
+  "Beautiful test": {
+    "prefix": "btest",
+    "body": [
+      "test(",
+      "  requirement(",
+      "    Given: '${1:context}',",
+      "    When: '${2:action}',",
+      "    Then: '${3:outcome}',",
+      "  ),",
+      "  procedure(() {",
+      "    ${4:// TODO: Implement procedure}",
+      "  }),",
+      ");"
+    ],
+    "description": "Creates a beautiful test"
+  },
+
+  "Beautiful widget test": {
+    "prefix": "bwtest",
+    "body": [
+      "testWidgets(",
+      "  requirement(",
+      "    Given: '${1:context}',",
+      "    When: '${2:action}',",
+      "    Then: '${3:outcome}',",
+      "  ),",
+      "  widgetsProcedure((tester) async {",
+      "    ${4:// TODO: Implement prodecure}",
+      "  }),",
+      ");"
+    ],
+    "description": "Creates a beautiful widget test"
+  }
+}
+```
+
+Then type:
+- `btest` to create a beautiful test template
+- `bwtest` to create a beautiful widget test template
