@@ -1,16 +1,13 @@
 name: example
-version: 0.1.0+1
 publish_to: "none"
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
-  flutter: ">=3.10.0"
+  sdk: ">=3.1.0 <4.0.0"
 
 dependencies:
-  flutter_test:
-    sdk: flutter
+  test: ^1.25.7
   test_beautifier:
     path: ../
 
 dev_dependencies:
-  very_good_analysis: ^5.1.0
+  very_good_analysis: ^6.0.0

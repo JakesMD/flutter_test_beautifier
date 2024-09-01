@@ -1,4 +1,4 @@
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 import 'package:test_beautifier/test_beautifier.dart';
 
 /// A counter that can be incremented and decremented.
