@@ -1,3 +1,4 @@
+// Required so that the prameter name 'when' can be used.
 // ignore_for_file: non_constant_identifier_names
 
 /// A test description template for better formatting and readability.
@@ -30,5 +31,4 @@ dynamic Function() procedure(dynamic Function() body) => body;
 /// A widget test callback template for better formatting and readability.
 Future<void> Function(T) widgetsProcedure<T>(
   Future<void> Function(T) callback,
-) =>
-    callback;
+) => callback;
