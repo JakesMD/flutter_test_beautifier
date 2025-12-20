@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1
+
+- 📦 Bump down test
+
 ## 2.0.0
 
 - ⬆️ Upgrade dart to 3.10.1
