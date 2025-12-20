@@ -1,13 +1,12 @@
 # Changelog
 
-## 2.0.1
+## 2.0.2
 
-- 📦 Bump down test
+- 📦 Remove unused test dependency
 
 ## 2.0.0
 
 - ⬆️ Upgrade dart to 3.10.1
-- 📦 Update dependencies
 
 ## 1.1.0
 
