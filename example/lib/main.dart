@@ -24,8 +24,8 @@ void main() {
   group('Counter Tests', () {
     test(
       requirement(
-        When: 'Counter is incremented',
-        Then: 'value increases by 1',
+        whenever: 'Counter is incremented',
+        then: 'value increases by 1',
       ),
       procedure(() {
         final counter = Counter(0)..increment();
@@ -35,8 +35,8 @@ void main() {
 
     test(
       requirement(
-        When: 'Counter is decremented',
-        Then: 'value decreases by 1',
+        whenever: 'Counter is decremented',
+        then: 'value decreases by 1',
       ),
       procedure(() {
         final counter = Counter(0)..decrement();

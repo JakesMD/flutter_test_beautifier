@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.0
+
+- ✨ Add `why` parameter
+- ✏️ Rename parameters to `given`, `whenever`, `then`
+- 🧪 Add tests
+
 ## 2.0.2
 
 - 📦 Remove unused test dependency

@@ -1,34 +1,46 @@
-// Required so that the prameter name 'when' can be used.
-// ignore_for_file: non_constant_identifier_names
-
-/// A test description template for better formatting and readability.
+/// Builds a structured test description from Given/When/Then/Why clauses.
 ///
-/// Given: The setup or context of the test case.
-/// When: The action or procedure under test.
-/// Then: The expected result or outcome of the test.
+/// Returns a human-readable string like:
+/// `"Given: X, When: Z, Then: W, Why: business reason"`
 ///
-/// Organizes and reformats the description of a test case. Parameter names are
-/// kept capitalized to avoid issues with the keyword 'when'.
+/// Omits any null or empty sections. Sections always appear in this order:
+/// Given → When → Then → Why.
+///
+/// **For AI coding agents:** When a section has multiple conditions, use
+/// adjacent string literals — Dart concatenates them at compile time:
+/// ```dart
+/// given: 'Counter is at 0 '
+///        'and User is authenticated',
+/// ```
+/// Never use a list or string interpolation — always adjacent literals.
+///
+/// **For coding agents:** The [why] parameter is machine-readable intent.
+/// Use it to determine whether a test is still relevant when requirements
+/// change — search for `why:` values that reference a removed feature or
+/// obsolete requirement, then delete or update those tests.
+///
+/// - [given] — preconditions or context before the action
+/// - [whenever] — the action or event under test (`on` is used instead of
+///   `when` because `when` is a reserved keyword in Dart)
+/// - [then] — the expected observable outcome
+/// - [why] — the business reason this behaviour must exist; used to identify
+///   tests that can be removed when a requirement is retired
 String requirement({
-  String? Given,
-  String? When,
-  String? Then,
-}) {
-  var given = Given != null ? 'Given: $Given' : '';
-  if (given.isNotEmpty && (When != null || Then != null)) given += ', ';
+  String? given,
+  String? whenever,
+  String? then,
+  String? why,
+}) => [
+  if (given != null && given.isNotEmpty) 'Given: $given',
+  if (whenever != null && whenever.isNotEmpty) 'When: $whenever',
+  if (then != null && then.isNotEmpty) 'Then: $then',
+  if (why != null && why.isNotEmpty) 'Why: $why',
+].join(', ');
 
-  var when = When != null ? 'When: $When' : '';
-  if (when.isNotEmpty && Then != null) when += ', ';
-
-  final then = Then != null ? 'Then: $Then' : '';
-
-  return '$given$when$then';
-}
-
-/// A test body template for better formatting and readability.
+/// Wraps a test body for readability — a no-op that signals intent.
 dynamic Function() procedure(dynamic Function() body) => body;
 
-/// A widget test callback template for better formatting and readability.
+/// Wraps a widget test callback for readability — a no-op that signals intent.
 Future<void> Function(T) widgetsProcedure<T>(
   Future<void> Function(T) callback,
 ) => callback;
